@@ -1,18 +1,13 @@
-name: learning-github-actions
-run-name: Test by ${{ github.actor }}
-on: [push]
-jobs:
-  setup-ubuntu:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      #- uses: actions/setup-node@v2
-      #  with:
-      #    node-version: '14'
-      #- run: npm install -g bats
-      #- run: bats -v
-      - name: docker run test
-        run: |
+name: learning-github-actions # ワークフローの名前
+run-name: Test by ${{ github.actor }} # 動的に実行者の名前を付与
+on: [push] # トリガイベント、push時にAction実行
+jobs: # ワークフローで実行するjob
+  setup-ubuntu: # job名称
+    runs-on: ubuntu-latest # ubuntu環境で実行
+    steps: # jobの実行内容
+      - uses: actions/checkout@v1 # 参考：https://qiita.com/uyuni/items/2f2a8ce4fef3712f1b74
+      - name: docker run test # 
+        run: | # パイプ付けることで各行実行できる
           sudo apt-get install docker
           sudo docker pull hello-world
-          docker run hello-world
+          sudo docker run hello-world
