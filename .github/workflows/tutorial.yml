@@ -2,4 +2,4 @@ name: test
 on: push
 
 jobs:
-  name: My first job
+  name: My-first-job
