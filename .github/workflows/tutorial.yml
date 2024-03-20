@@ -17,3 +17,4 @@ jobs:
           ls -a
           sudo apt-get install docker
           sudo docker pull hello-world
+          docker run hello-world
