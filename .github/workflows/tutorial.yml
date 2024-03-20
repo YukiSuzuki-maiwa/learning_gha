@@ -1,8 +1,8 @@
-name: learn-github-actions
-run-name: echo by ${{ github.actor }}
+name: learning-github-actions
+run-name: Test by ${{ github.actor }}
 on: [push]
 jobs:
-  check-bats-version:
+  setup-ubuntu:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -10,7 +10,7 @@ jobs:
         with:
           node-version: '14'
       - run: npm install -g bats
-      - run: bats -v
+      #- run: bats -v
       - name: docker run test
         run: |
           pwd
