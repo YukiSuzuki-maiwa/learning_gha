@@ -1,3 +1,6 @@
+name: test
+on: push
+
 jobs:
   # "my_first_job"というジョブIDでジョブを定義
   my_first_job:
