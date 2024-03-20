@@ -5,9 +5,10 @@ jobs: # ワークフローで実行するjob
   setup-ubuntu: # job名称
     runs-on: ubuntu-latest # ubuntu環境で実行
     steps: # jobの実行内容
-      - uses: actions/checkout@v1 # 参考：https://qiita.com/uyuni/items/2f2a8ce4fef3712f1b74
+      - name: Check out repository code
+        uses: actions/checkout@v1 # 参考：https://qiita.com/uyuni/items/2f2a8ce4fef3712f1b74
       - name: docker run test # stepの名称
-      run: | # パイプ付けることで各行実行できる
+        run: | # パイプ付けることで各行実行できる
           sudo apt-get install docker
           sudo docker pull hello-world
           sudo docker run hello-world
