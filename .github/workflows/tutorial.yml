@@ -3,4 +3,3 @@ on: push
 
 jobs:
   name: My first job
-  name: My second job
